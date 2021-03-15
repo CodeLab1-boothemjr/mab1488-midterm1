@@ -87,7 +87,7 @@ public class LevelLoader : MonoBehaviour
                         newObj = Instantiate<GameObject>(start);
                         startPos = new Vector3(x + xOffset, 0, -y + yOffset);
                         break;
-                    case 'f': //if char is a 's'
+                    case 'f': //if char is an 'f'
                         //make a start gameObject
                         newObj = Instantiate<GameObject>(finish);
                         break;
@@ -95,9 +95,12 @@ public class LevelLoader : MonoBehaviour
                         //make a wall
                         newObj = Instantiate<GameObject>(wall);
                         break;
+                    case 'e': //if char is an 'e'
+                        //make a wall
+                        newObj = Instantiate<GameObject>(enemy);
+                        break;
                     default: //if the char is anything else
                         newObj = null; //make newObj null
-                        //newObj2 = null; //make newObj2 null
                         break;
                 }
 

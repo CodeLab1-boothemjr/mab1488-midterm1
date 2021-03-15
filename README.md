@@ -2,11 +2,14 @@
 
 ## todo list
 
-* set up ascii loader
-* add enemies
-* add win screen
+* add enemy AI
 * add death
-* trail
+* add level limit
+* add music
+* add win screen
+* add trail
+* update maps
+* receive additional maps
 
 ## bugs
 
