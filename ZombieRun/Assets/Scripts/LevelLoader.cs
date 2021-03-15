@@ -108,7 +108,7 @@ public class LevelLoader : MonoBehaviour
                 if (newObj != null)
                 {
                     newObj.transform.position =
-                        new Vector3(x + xOffset, 0, -y + yOffset);
+                        new Vector3(x + xOffset, .027f, -y + yOffset);
                     newObj.transform.parent = level.transform;
                 }
             }

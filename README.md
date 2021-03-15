@@ -1,8 +1,12 @@
 # mab1488-midterm1
 
+## shoutouts
+
+* Matt for lots of code / comments to reference.
+* Kelly for helping to make some of the levels.
+
 ## todo list
 
-* add enemy AI
 * add death
 * add level limit
 * add music
@@ -14,6 +18,7 @@
 ## bugs
 
 * players and enemies will catch on walls
+* enemy AI currently uses MoveTowards instead of 
 
 ## questions
 

@@ -12,11 +12,6 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody>(); // assign rb to this rigidbody
     }
 
-    private void Awake()
-    {
-        //transform.position = GameObject.Find("StartPos").transform.position;
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -50,14 +45,4 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
-
-    // old ontrigger code
-    // todo consider removing
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "EndPos")
-        {
-            GameManager.AdvanceCurrentLevel();
-        }
-    }*/
 }
