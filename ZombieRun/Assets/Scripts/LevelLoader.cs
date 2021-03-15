@@ -70,10 +70,14 @@ public class LevelLoader : MonoBehaviour
 
                 switch (c) //switch statement for the char
                 {
-                    case 'p': //if char is a 'p'
-                        //make a player gameObject
-                        newObj = Instantiate<GameObject>(player);
-                        //newObj2 = Instantiate<GameObject>(start);
+                    case 's': //if char is a 's'
+                        //make a start gameObject
+                        newObj = Instantiate<GameObject>(start);
+                        startPos = new Vector3(x + xOffset, 0, -y + yOffset);
+                        break;
+                    case 'f': //if char is a 's'
+                        //make a start gameObject
+                        newObj = Instantiate<GameObject>(finish);
                         break;
                     case 'w': //if char is a 'w'
                         //make a wall
@@ -89,16 +93,11 @@ public class LevelLoader : MonoBehaviour
                 {
                     newObj.transform.position =
                         new Vector3(x + xOffset, 0, -y + yOffset);
+                    newObj.transform.parent = level.transform;
                 }
-
-                /*if (newObj2 != null)
-                {
-                    newObj2.transform.position = 
-                        new Vector3(x + xOffset, 0, -y + yOffset);
-                    newObj2 == null;
-                }*/
             }
         }
+        Instantiate(player).transform.position = startPos;
     }
     
     // Update is called once per frame
