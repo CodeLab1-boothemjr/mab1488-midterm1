@@ -266,6 +266,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4539991853246938181, guid: b74101c1b4d07af4fb2785e71fc61b34,
         type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 8423651179387792836, guid: 8336067182352e547b97cf1ee14bc4d4,
+        type: 3}
+    - target: {fileID: 4539991853246938181, guid: b74101c1b4d07af4fb2785e71fc61b34,
+        type: 3}
       propertyPath: start
       value: 
       objectReference: {fileID: 6679234373645198809, guid: 0a152fc5beb79b34091ac53b006fb8bf,
@@ -285,6 +291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: yOffset
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539991853246938181, guid: b74101c1b4d07af4fb2785e71fc61b34,
+        type: 3}
+      propertyPath: fileName
+      value: LevelNum.txt
       objectReference: {fileID: 0}
     - target: {fileID: 4539991853246938186, guid: b74101c1b4d07af4fb2785e71fc61b34,
         type: 3}
