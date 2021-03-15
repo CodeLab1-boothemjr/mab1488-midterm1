@@ -4,5 +4,6 @@
 
 * set up ascii loader
 * add enemies
+* trail
 
 ## bugs

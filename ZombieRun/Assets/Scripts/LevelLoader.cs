@@ -34,23 +34,71 @@ public class LevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentPlayer = Get 
         LoadLevel(); // load first level
     }
 
     void LoadLevel()
     {
-        //Destroy(level); //destroy the current level
+        Destroy(level); //destroy the current level
         level = new GameObject("Level"); //create a new level gameObject
         
         string current_file_path = //build path to the level file
             Application.dataPath + "/Levels/" + fileName.Replace("Num", currentLevel + "");
 
-        string text = File.ReadAllText(current_file_path);
-        Debug.Log(text);
-        currentPlayer = Instantiate<GameObject>(player);
-        //startPos = new Vector3(-9.0f, 0.09f, 8.8f);
-        currentPlayer.transform.position = new Vector3(-9.0f, 0.09f, 8.8f);
+        //pull the contents of the file into a string array
+        //each line in the file becomes an item in the array
+        string[] fileLines = File.ReadAllLines(current_file_path);
+        
+        //loop through each line
+        for (int y = 0; y < fileLines.Length; y++)
+        {
+            //get the current line
+            string lineText = fileLines[y];
+
+            //split the line into a char array
+            char[] characters = lineText.ToCharArray();
+
+            //loop through each char
+            for (int x = 0; x < characters.Length; x++)
+            {
+                //grab the current char
+                char c = characters[x];
+
+                //var for newObj
+                GameObject newObj;
+                //GameObject newObj2;
+
+                switch (c) //switch statement for the char
+                {
+                    case 'p': //if char is a 'p'
+                        //make a player gameObject
+                        newObj = Instantiate<GameObject>(player);
+                        //newObj2 = Instantiate<GameObject>(start);
+                        break;
+                    case 'w': //if char is a 'w'
+                        //make a wall
+                        newObj = Instantiate<GameObject>(wall);
+                        break;
+                    default: //if the char is anything else
+                        newObj = null; //make newObj null
+                        //newObj2 = null; //make newObj2 null
+                        break;
+                }
+
+                if (newObj != null)
+                {
+                    newObj.transform.position =
+                        new Vector3(x + xOffset, 0, -y + yOffset);
+                }
+
+                /*if (newObj2 != null)
+                {
+                    newObj2.transform.position = 
+                        new Vector3(x + xOffset, 0, -y + yOffset);
+                    newObj2 == null;
+                }*/
+            }
+        }
     }
     
     // Update is called once per frame
