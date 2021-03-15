@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.ZombieRun.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Unity\Repos\CodeLab1\Week6\mab1488-midterm1\ZombieRun\.idea\.idea.ZombieRun\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
