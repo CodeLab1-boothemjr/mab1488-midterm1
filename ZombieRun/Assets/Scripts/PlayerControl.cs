@@ -22,8 +22,7 @@ public class PlayerControl : MonoBehaviour
     {
         // frame-based step for speed
         float step =  speed * Time.deltaTime;
-        Debug.Log(rb.velocity.magnitude);
-        
+
         // only add forces if under maxSpeed
         if (rb.velocity.magnitude < maxSpeed)
         {
