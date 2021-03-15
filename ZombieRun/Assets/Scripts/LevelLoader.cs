@@ -6,8 +6,8 @@ using UnityEngine;
 public class LevelLoader : MonoBehaviour
 {
     //offset vars for the level position
-    public float xOffset;
-    public float yOffset;
+    public float xOffset = -10;
+    public float yOffset = 10;
     
     //Prefabs for the gameObjects we want to add to our scene
     public GameObject player;
@@ -30,6 +30,18 @@ public class LevelLoader : MonoBehaviour
     
     //empty game object that holds the level
     public GameObject level;
+    
+    //property wrapping currentLevel
+    //when the level changes, we load that level
+    public int CurrentLevel
+    {
+        get { return currentLevel;}
+        set
+        {
+            currentLevel = value;
+            LoadLevel();
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -89,6 +101,7 @@ public class LevelLoader : MonoBehaviour
                         break;
                 }
 
+                // if there's an object to be placed, place it
                 if (newObj != null)
                 {
                     newObj.transform.position =
@@ -97,7 +110,17 @@ public class LevelLoader : MonoBehaviour
                 }
             }
         }
-        Instantiate(player).transform.position = startPos;
+        
+        //add the player last
+        if (currentPlayer == null)
+        {
+            currentPlayer = Instantiate(player);
+            currentPlayer.transform.position = startPos;
+        }
+        else
+        {
+            currentPlayer.transform.position = startPos;
+        }
     }
     
     // Update is called once per frame
