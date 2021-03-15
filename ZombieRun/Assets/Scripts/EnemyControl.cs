@@ -27,9 +27,6 @@ public class EnemyControl : MonoBehaviour
         if (rb.velocity.magnitude < maxSpeed)
         {
             //todo swap to add force AI controls
-            //transform.LookAt(target.transform.position);
-            //rb.AddForce(Vector3.forward * speed);
-            
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         }
     }
